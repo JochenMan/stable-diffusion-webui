@@ -281,6 +281,12 @@ prepare_tcmalloc() {
     fi
 }
 
+if [[ -n "${HEADLESS}" ]] && [ "${HEADLESS}" = "True" ]; then
+    echo "Headless mode: Replacing opencv-python with headless variant"
+    pip uninstall -y opencv-python opencv-python-headless 2>/dev/null
+    pip install --no-cache-dir opencv-python-headless
+fi
+
 KEEP_GOING=1
 export SD_WEBUI_RESTART=tmp/restart
 while [[ "$KEEP_GOING" -eq "1" ]]; do
