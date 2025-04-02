@@ -45,4 +45,7 @@
 # Uncomment to disable TCMalloc
 #export NO_TCMALLOC="True"
 
+# Uncomment to enable headless mode
+#export HEADLESS="True"
+
 ###########################################
