@@ -154,7 +154,17 @@ Or just clone the repo wherever you want:
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
 ```
 
-3. Run `webui.sh`.
+3. Run the WebUI
+```bash
+./webui.sh
+```
+
+For Docker, WSL, or servers without a GUI, set:  
+```bash
+HEADLESS=True ./webui.sh
+```
+This swaps opencv-python for opencv-python-headless and therefore fixes dependency issues to GUI-related libs (libGL.so.1, X11, GTK).
+
 4. Check `webui-user.sh` for options.
 ### Installation on Apple Silicon
 
